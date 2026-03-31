@@ -116,11 +116,6 @@ export default function Gallery() {
         eyebrow="Галерея работ"
         title="Кураторская подборка: форма, фактура и ручная пластика"
       />
-      <p className="mb-8 max-w-2xl text-sm leading-relaxed text-[#6e5f57] md:mb-10">
-        Отобраны только сильные кадры с разным планом и тоном: портрет,
-        коллекционные обложки и детали вышивки выстраиваются в цельную
-        визуальную историю.
-      </p>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:auto-rows-[88px] md:gap-5 lg:auto-rows-[102px]">
         {primaryTiles.map((item) => (
