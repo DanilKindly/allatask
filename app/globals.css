@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f6f2ed;
+  color: #2d2421;
+  font-family: "Manrope", system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(207, 169, 164, 0.12), transparent 36%),
+    radial-gradient(circle at 100% 14%, rgba(182, 150, 104, 0.1), transparent 33%),
+    linear-gradient(180deg, #f7f3ee 0%, #f3ece3 45%, #f6f2ed 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0.14) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+}
+
+.hero-photo {
+  border: 1px solid rgba(161, 133, 112, 0.32);
+  box-shadow: 0 18px 38px rgba(96, 76, 63, 0.14);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(28, 19, 15, 0.34), transparent 38%),
+    radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.16), transparent 32%);
+}
+
+.photo-label {
+  position: absolute;
+  left: 0.8rem;
+  bottom: 0.8rem;
+  z-index: 2;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(56, 42, 35, 0.8);
+  background: rgba(247, 240, 233, 0.8);
+  border: 1px solid rgba(120, 98, 83, 0.35);
+  border-radius: 999px;
+  padding: 0.3rem 0.6rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-tile {
+  border: 1px solid rgba(136, 111, 95, 0.32);
+  box-shadow: 0 14px 30px rgba(90, 71, 58, 0.11);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(90, 71, 58, 0.15);
+}
+
+.gallery-caption {
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(248, 242, 234, 0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 999px;
+  padding: 0.36rem 0.7rem;
+}
+
+.gallery-caption span {
+  font-size: 0.67rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: rgba(69, 54, 47, 0.92);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-visible,
+  .gallery-tile,
+  .hero-photo img {
+    transition: none !important;
+  }
+}
