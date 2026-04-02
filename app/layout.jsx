@@ -1,14 +1,14 @@
 ﻿import "./globals.css";
 
 export const metadata = {
-  title: "Alla Taskaeva — Authorial Textile Bookbinding",
+  title: "Блокноты в стиле Таскаевой",
   description:
-    "Biographical archive page about Alla Taskaeva, Russian master of authorial textile bookbinding and embroidery."
+    "Архивная страница о художественном переплете и авторской вышивке Аллы Таскаевой."
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body>{children}</body>
     </html>
   );
